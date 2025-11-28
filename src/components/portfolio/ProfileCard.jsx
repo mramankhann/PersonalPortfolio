@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ProfileCard = () => {
   return (
- <Card className="p-8 bg-white shadow-card hover:shadow-hover transition-all duration-300 animate-scale-in">
+ <Card className="p-8 lg:py-25 bg-white shadow-card hover:shadow-hover transition-all duration-300 animate-scale-in">
   <div className="
       flex flex-col md:flex-row
       items-center md:items-center 
@@ -34,14 +34,17 @@ const ProfileCard = () => {
       </p>
 
       <div className="flex flex-col sm:flex-row md:justify-start justify-center items-center gap-4">
-        <Button
-          className="bg-gradient-primary text-gray-500 border-gray-300 hover:shadow-glow transition-all duration-300 transform hover:scale-105"
-          size="lg"
-          variant="outline"
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Download CV
-        </Button>
+            <Button
+  asChild
+  className="bg-gradient-primary text-gray-500 border-gray-300 hover:shadow-glow transition-all duration-300"
+  size="lg"
+  variant="outline"
+>
+  <a href="/cv.pdf" download>
+    <Download className="w-4 h-4 mr-2" />
+    Download CV
+  </a>
+</Button>
 
         <Button
           className="bg-black text-white hover:shadow-glow transition-all duration-300 transform hover:scale-105"
@@ -59,3 +62,4 @@ const ProfileCard = () => {
 };
 
 export default ProfileCard;
+
